@@ -23,13 +23,20 @@ soup = BeautifulSoup(yc_webpage,"html.parser")
 
 titlelines = soup.select(".titleline > a")
 titlelines_list = [i.getText() for i in titlelines]
-pp.pprint(titlelines_list)
+# pp.pprint(titlelines_list)
 
 urls = soup.select(".sitestr")
 urls_list = [i.getText() for i in urls]
-pp.pprint(urls_list)
-print(len(urls_list))
+# print(len(urls_list))
+# pp.pprint(urls_list)
 
 upvotes = soup.select(".score")
-upvotes_list = [i.getText() for i in upvotes]
-print(upvotes_list)
+upvotes_list = [int(i.getText().split()[0]) for i in upvotes]
+# print(upvotes_list)
+
+upvotes_max = max(upvotes_list)
+max_index = upvotes_list.index(upvotes_max)
+
+print(titlelines_list[max_index])
+print(urls_list[max_index])
+print(str(upvotes_list[max_index])+" upvotes")
