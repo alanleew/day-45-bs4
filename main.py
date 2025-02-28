@@ -40,3 +40,6 @@ max_index = upvotes_list.index(upvotes_max)
 print(titlelines_list[max_index])
 print(urls_list[max_index])
 print(str(upvotes_list[max_index])+" upvotes")
+
+# TODO: Note about ethics of webscraping, use robots.txt after endpoint to see what the website allows for webscraping
+# https://news.ycombinator.com/robots.txt
